@@ -11,6 +11,6 @@ class TenantViewset(viewsets.ModelViewSet):
 
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter] # this indicates that these are the tools you can use to filter, order, and search the data in this viewset
 
-    filterset_fields = ['first_name', 'active', 'phone_number'] # this indicates which fields you can filter the data by
+    filterset_fields = ['full_name', 'active', 'phone_number'] # this indicates which fields you can filter the data by
 
-    ordering_fields = ['first_name', 'last_name', 'created_at'] # this indicates which fields you can order the data by
+    ordering_fields = ['full_name', 'created_at'] # this indicates which fields you can order the data by

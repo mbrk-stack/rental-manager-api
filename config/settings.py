@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'tenants',
     'leases',
     'payments',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -138,5 +139,14 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.OrderingFilter',
         'rest_framework.filters.SearchFilter',
-    ]
+    ], # describes how the API can be filtered, ordered, and searched
+
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema', # describes how the API schema is generated
+
 }
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Rental Manager API',
+    'DESCRIPTION': 'API for managing tenants, leases, and payments in a rental management system.',
+    'VERSION': '1.0.0',
+    }
